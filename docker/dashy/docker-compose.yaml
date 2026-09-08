@@ -1,0 +1,24 @@
+services:
+  dashy:
+    image: lissy93/dashy:latest
+    container_name: dashy
+    ports:
+      - 3002:8080
+    volumes:
+      - /docker/dashy:/app/user-data
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'node', '/app/services/healthcheck.js']
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - reverse-proxy
+
+networks:
+  reverse-proxy:
+    external: true
+
