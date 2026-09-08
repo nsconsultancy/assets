@@ -24,7 +24,7 @@ services:
       PMA_PORT: 3306
     volumes:
       - /docker/pma-config:/etc/phpmyadmin
-      - /docker/pma-themes:/var/www/html/themes
+      - /docker/pma-themes:/var/www/html/themes1
     ports:
       - 8081:80
     networks:
