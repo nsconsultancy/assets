@@ -8,6 +8,7 @@ services:
     environment:
       - TZ=Asia/Kolkata
       - DOCKER_API_VERSION=1.56
+      - WATCHTOWER_FIRST_CHECK_ON_STARTUP=true
       - WATCHTOWER_SCHEDULE=0 0 5 * * FRI
       - WATCHTOWER_CLEANUP=true
       - WATCHTOWER_INCLUDE_RESTARTING=true
