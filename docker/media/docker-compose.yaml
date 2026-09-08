@@ -1,0 +1,177 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+      - LIBVA_DRIVER_NAME=iHD
+    volumes:
+      - /docker/jellyfin:/config
+      - /mnt/nas/Media:/media
+    devices:
+      - /dev/dri:/dev/dri
+    ports:
+      - 8096:8096
+    restart: unless-stopped
+    networks:
+      - reverse-proxy
+      - media
+
+  jellyseerr:
+    image: seerr/seerr:latest
+    container_name: jellyseerr
+    environment:
+      - TZ=Asia/Kolkata
+    volumes:
+      - /docker/jellyseerr:/app/config
+    ports:
+      - 5055:5055
+    restart: unless-stopped
+    networks:
+      - reverse-proxy
+      - media
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /docker/prowlarr:/config
+    ports:
+      - 9696:9696
+    dns:
+      - 1.1.1.1
+      - 1.0.0.1
+    restart: unless-stopped
+    networks:
+      - reverse-proxy
+      - media
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /docker/radarr:/config
+      - /mnt/nas/Media/Movies:/movies
+      - /mnt/nas/Media/downloads:/downloads
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+    networks:
+      - reverse-proxy
+      - media
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /docker/sonarr:/config
+      - /mnt/nas/Media/Shows:/shows
+      - /mnt/nas/Media/downloads:/downloads
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+    networks:
+      - reverse-proxy
+      - media
+
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /docker/bazarr:/config
+      - /mnt/nas/Media/Shows:/shows
+      - /mnt/nas/Media/Movies:/movies
+    ports:
+      - 6767:6767
+    restart: unless-stopped
+    networks:
+      - reverse-proxy
+      - media
+
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+      - WEBUI_PORT=8212
+    volumes:
+      - /docker/qbittorrent:/config
+      - /mnt/nas/Media/downloads:/downloads
+    ports:
+      - 8212:8212
+      - 6881:6881
+      - 6881:6881/udp
+    dns:
+      - 1.1.1.1
+      - 1.0.0.1
+    restart: unless-stopped
+    networks:
+      - reverse-proxy
+      - media
+
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    environment:
+      - TZ=Asia/Kolkata
+    ports:
+      - 8191:8191
+    dns:
+      - 1.1.1.1
+      - 1.0.0.1
+    restart: unless-stopped
+    networks:
+      - media
+
+  byparr:
+    image: ghcr.io/thephaseless/byparr:latest
+    container_name: byparr
+    environment:
+      - TZ=Asia/Kolkata
+      - PORT=8192
+    ports:
+      - 8192:8192
+    dns:
+      - 1.1.1.1
+      - 1.0.0.1
+    restart: unless-stopped
+    networks:
+      - media
+
+  tamilmv-proxy:
+    image: tamilmv-proxy:latest
+    container_name: tamilmv_proxy
+    environment:
+      - BASE_URL=https://www.1tamilmv.cards/
+      - TZ=Asia/Kolkata
+    ports:
+      - 9697:5001
+    restart: unless-stopped
+    networks:
+      - media
+
+networks:
+  media:
+    external: true
+  reverse-proxy:
+    external: true
