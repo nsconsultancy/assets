@@ -33,6 +33,15 @@ services:
       - reverse-proxy
       - media
 
+  seekarr:
+    image: tumeden/seekarr:latest
+    container_name: seekarr
+    restart: unless-stopped
+    ports:
+      - 8788:8788
+    volumes:
+      - /docker/seekarr/data:/data
+
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
