@@ -1,0 +1,22 @@
+services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce:latest
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    environment:
+      TZ: Asia/Kolkata
+    networks:
+      - portainer
+    restart: unless-stopped
+
+networks:
+  portainer:
+    driver: bridge
+
+volumes:
+  portainer_data:
+    name: portainer_data
