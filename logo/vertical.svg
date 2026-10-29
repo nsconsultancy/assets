@@ -28,7 +28,7 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      inkscape:zoom="0.25"
-     inkscape:cx="1998"
+     inkscape:cx="1996"
      inkscape:cy="1990"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
@@ -39,6 +39,18 @@
      inkscape:export-bgcolor="#00000000" />
   <defs
      id="defs1">
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#448cff;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#36ff8d;stop-opacity:1;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
     <linearGradient
        id="linearGradient49"
        inkscape:collect="always">
@@ -52,28 +64,6 @@
          id="stop50" />
     </linearGradient>
     <linearGradient
-       id="linearGradient47"
-       inkscape:collect="always">
-      <stop
-         style="stop-color:#448cff;stop-opacity:1;"
-         offset="0"
-         id="stop48" />
-      <stop
-         style="stop-color:#36ff8d;stop-opacity:0.88679248;"
-         offset="1"
-         id="stop47" />
-    </linearGradient>
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient47"
-       id="linearGradient48"
-       x1="-617.198"
-       y1="380.63223"
-       x2="-441.13499"
-       y2="380.63223"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.0991802,0,0,1.0890352,52.478221,-2.2134722)" />
-    <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient49"
        id="linearGradient50"
@@ -84,6 +74,15 @@
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(1.0940959,0,0,1.0940959,-210.87208,49.303581)"
        spreadMethod="pad" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="-625.93359"
+       y1="412.30842"
+       x2="-432.40862"
+       y2="412.30842"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <g
      id="g1">
@@ -212,7 +211,7 @@
        rx="26.174227"
        ry="25.932653" />
     <rect
-       style="display:inline;fill:url(#linearGradient48);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.116316;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:url(#linearGradient2);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.116316;stroke-dasharray:none;stroke-opacity:1"
        id="rect47"
        width="193.52498"
        height="51.865307"

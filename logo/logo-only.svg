@@ -9,7 +9,7 @@
    id="svg1"
    inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
    sodipodi:docname="logo-only.svg"
-   inkscape:export-filename="proto"
+   inkscape:export-filename="logo.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -29,39 +29,38 @@
      inkscape:document-units="px"
      inkscape:zoom="0.30325"
      inkscape:cx="1998.3512"
-     inkscape:cy="1736.1913"
+     inkscape:cy="1739.4889"
      inkscape:window-width="2560"
      inkscape:window-height="1494"
      inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1"
+     inkscape:current-layer="g7"
      inkscape:export-bgcolor="#00000000"
      showguides="true" />
   <defs
      id="defs1">
     <linearGradient
-       id="linearGradient47"
+       id="linearGradient1"
        inkscape:collect="always">
       <stop
          style="stop-color:#448cff;stop-opacity:1;"
          offset="0"
-         id="stop48" />
+         id="stop1" />
       <stop
-         style="stop-color:#36ff8d;stop-opacity:0.88679248;"
+         style="stop-color:#36ff8d;stop-opacity:1;"
          offset="1"
-         id="stop47" />
+         id="stop2" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient47"
-       id="linearGradient48"
-       x1="-617.198"
-       y1="380.63223"
-       x2="-441.13498"
-       y2="380.63223"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.0991801,0,0,1.0890352,-86.894386,126.56736)" />
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="-659.80078"
+       y1="527.35486"
+       x2="-408.25554"
+       y2="527.35486"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <g
      id="g8"
@@ -200,7 +199,7 @@
     <g
        id="g7">
       <rect
-         style="display:inline;fill:url(#linearGradient48);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.116316;stroke-dasharray:none;stroke-opacity:1"
+         style="display:inline;fill:url(#linearGradient2);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.116316;stroke-dasharray:none;stroke-opacity:1"
          id="rect47"
          width="251.54524"
          height="67.414917"
