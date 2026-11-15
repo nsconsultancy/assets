@@ -39,7 +39,12 @@ services:
     depends_on:
       - mongodb
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:8081 || exit 1"]
+      test: [
+          "CMD",
+          "node",
+          "-e",
+          "require('http').get('http://127.0.0.1:8081', (r) => process.exit(r.statusCode === 200 || r.statusCode === 401 ? 0 : 1)).on('error', () => process.exit(1))"
+        ]
       interval: 30s
       timeout: 10s
       retries: 3

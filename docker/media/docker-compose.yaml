@@ -145,7 +145,7 @@ services:
       - 6767:6767
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:6767/api/system/status || exit 1"]
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:6767/api/system/ping || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -174,7 +174,7 @@ services:
       - 1.0.0.1
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:8212/api/v2/app/version || exit 1"]
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:8212/ || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -195,7 +195,7 @@ services:
       - 1.0.0.1
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:8191/ || exit 1"]
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8191/health"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -216,7 +216,7 @@ services:
       - 1.0.0.1
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:8192/ || exit 1"]
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8192/health"]
       interval: 30s
       timeout: 10s
       retries: 3
