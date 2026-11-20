@@ -163,7 +163,8 @@ services:
       - TZ=Asia/Kolkata
       - WEBUI_PORT=8212
       - DOCKER_MODS=linuxserver/mods:universal-package-install
-      - INSTALL_PACKAGES=py3-apprise
+      - INSTALL_PACKAGES=python3-pip
+      - PIP_PACKAGES=apprise
     volumes:
       - /docker/qbittorrent:/config
       - /mnt/nas/Media/downloads:/downloads
