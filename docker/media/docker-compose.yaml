@@ -157,13 +157,12 @@ services:
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
+    entrypoint: ["/bin/sh", "-c", "apk add --no-cache py3-pip && pip install --no-cache-dir --break-system-packages apprise && exec /init"]
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Kolkata
       - WEBUI_PORT=8212
-      - DOCKER_MODS=linuxserver/mods:universal-package-install
-      - INSTALL_PACKAGES=py3-apprise
     volumes:
       - /docker/qbittorrent:/config
       - /mnt/nas/Media/downloads:/downloads
